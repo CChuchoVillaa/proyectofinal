@@ -58,7 +58,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	   
 	      $.ajax({
                                     type:"POST",
-                                    url:"buscarServicios.php",
+                                    url:"http://chucovillan.260mb.net/buscarServicios.php",
                                     data:"id="+id,
                                     success: reg_ActuIngre
                                 });
@@ -87,7 +87,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	
 		$.ajax({
 		  type:"POST",
-		  url:"editarServicios.php",
+		  url:"http://chucovillan.260mb.net/editarServicios.php",
 		  data:"id="+id+"&nombre="+nom+"&direccion="+dir+"&giro="+giro+"&obtLatitud="+lat+"&obtLongitud="+lon,
 		  success: guardandoServicios		  		
 		});
@@ -110,7 +110,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	
 		$.ajax({
 		  type:"POST",
-		  url:"eliminarServicios.php",
+		  url:"http://chucovillan.260mb.net/eliminarServicios.php",
 		  data:"id="+id,
 		  success: eliminandoServicios		  		
 		});
@@ -139,7 +139,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	
 		$.ajax({
 		  type:"POST",
-		  url:"guardarServicios.php",
+		  url:"http://chucovillan.260mb.net/guardarServicios.php",
 		  data:"nombre="+nom+"&direccion="+dir+"&giro="+giro+"&obtLatitud="+lat+"&obtLongitud="+lon,
 		  success: guardandoServicios		  		
 		});
@@ -166,7 +166,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	options.params = params;
 
 	var ft = new FileTransfer();
-	ft.upload(foto,"http://itslmoviles.260mb.net/upload.php",function(r){		
+	ft.upload(foto,"http://chucovillan.260mb.net/upload.php",function(r){		
 		navigator.notification.confirm("El archivo: "+r.response,null, "Notificacion");
 	}, function(err){
 		navigator.notification.alert("Error: "+err.code+" detalle: "+err.response,null, "Error de Envío");
@@ -215,7 +215,7 @@ $(document).on("pageinit","#Principal", function(e, data){
 	    function exito(posic){	      	      	         	     
 	      $.ajax({
 		type:"POST",
-		url:"consultaServ.php",
+		url:"http://chucovillan.260mb.net/consultaServ.php",
 		data:"",
 		success: serviciosConsultados
 	      });	     
